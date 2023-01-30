@@ -1,0 +1,38 @@
+name : hacker
+
+
+on:
+    schedule:
+      - cron: "0 */6 * * *"
+    push:
+      branches: [ main ]
+    workflow_dispatch:
+
+env:
+  API_ID: ${{secrets.API_ID}}
+  API_HASH: ${{secrets.API_HASH}}
+  BOT_TOKEN: ${{secrets.BOT_TOKEN}}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+       - uses: actions/checkout@v2
+       - uses: styfle/cancel-workflow-action@0.9.0
+       - name: Set up Python 3.9
+         uses: actions/setup-python@v2.2.2
+         with:
+           python-version: 3.9
+           
+       - name: Cancel Previous Runs
+         uses: styfle/cancel-workflow-action@0.9.1
+         with:
+              access_token: ${{ github.token }}
+
+       - name: cloning repo , install and running
+         timeout-minutes: 350
+         continue-on-error: true
+         run: |
+           git clone https://github.com/Romeo-RJ-143/HACKBOT.git bot && cd bot && pip3 install -r requirements.txt
+           python3 hack.py

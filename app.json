@@ -4,13 +4,11 @@
     "logo": "",
     "keywords": [
         "TELETHON",
-        "LEGENDBOY",
         "Telegram Bot",
-        "piro bolte",
-        "LegendBoy_XD"
+        "piro bolte"
     ],
     "website": "",
-    "success_url": "https://telegram.dog/LegendBoy_XD",
+    "success_url": "https://telegram.dog/Romeo_RJ_143",
     "env": {
         "BOT_TOKEN": {
             "description": "You Telegram Bot Token from @BotFather",
@@ -21,7 +19,7 @@
             "value": ""
         },
         "YOUR_NAME": {
-            "description": "Your Name Plz",
+            "description": "Enter Your Name",
             "value": ""
         },
         "APP_ID": {

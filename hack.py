@@ -1,15 +1,18 @@
 import os
-os.system("pip install -U telethon")
+#os.system("pip install -U telethon")
 from telethon import TelegramClient, events, functions, types, Button
 from datetime import timedelta
 import asyncio
-
-api_id = os.environ.get("APP_ID")
+from config import API_ID, API_HASH, BOT_TOKEN
+api_id = API_ID
+api_hash = API_HASH
+token = BOT_TOKEN
+#api_id = os.environ.get("APP_ID")
 import os, asyncio, re
 from os import system
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
-api_hash = os.environ.get("API_HASH")
-token = os.environ.get("BOT_TOKEN")
+#api_hash = os.environ.get("API_HASH")
+#token = os.environ.get("BOT_TOKEN")
 client = TelegramClient('Romeo', api_id, api_hash).start(bot_token=token)
 from telethon import TelegramClient as tg
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest as pc, JoinChannelRequest as join, LeaveChannelRequest as leave, DeleteChannelRequest as dc
